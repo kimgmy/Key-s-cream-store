@@ -1,0 +1,147 @@
+<html>
+<head>
+  <title>G-M Cream</title>
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+  <header></header>
+
+  <div class="wrapper">
+    <div class="container">
+
+      <input type="radio" name="slide" id="c1" checked>
+      <label for="c1" class="card" style="background-image: url('KC1.JPG');">
+        <div class="row">
+          <div class="icons">1</div>
+          <div class="description">
+            <h4>Key's Cream</h4>
+            <p>The best ice cream store</p>
+          </div>
+        </div>
+      </label>
+
+      <input type="radio" name="slide" id="c2">
+      <label for="c2" class="card" style="background-image: url('KC2.JPG');">
+        <div class="row">
+          <div class="icons">2</div>
+          <div class="description">
+            <h4>Matcha Ice Cream</h4>
+            <p>A melting matcha ice cream blended with flavour you want it</p>
+          </div>
+        </div>
+      </label>
+
+      <input type="radio" name="slide" id="c3">
+      <label for="c3" class="card" style="background-image: url('KC3.JPG');">
+        <div class="row">
+          <div class="icons">3</div>
+          <div class="description">
+            <h4>Cone Key's Cream</h4>
+            <p>Cone shaped pastry with ice cream on top cone</p>
+          </div>
+        </div>
+      </label>
+
+      <input type="radio" name="slide" id="c4">
+      <label for="c4" class="card" style="background-image: url('KC4.JPG');">
+        <div class="row">
+          <div class="icons">4</div>
+          <div class="description">
+            <h4>Key's Cream Cup</h4>
+            <p>Selection tips to elevate our ice cream experience!</p>
+          </div>
+        </div>
+      </label>
+
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="index.html" class="nav-item is-active" style="--color:#FF6B6B">Home</a>
+
+    <div class="nav-item dropdown" style="--color:#FFA94D">
+      <span class="dropdown-toggle">Produk</span>
+      <div class="dropdown-menu">
+        <a href="#">Kategori</a>
+        <a href="#">Ice Cream Stick</a>
+        <a href="#">Ice Cream Cup</a>
+        <a href="#">Ice Cream Cone</a>
+        <a href="#">Ice Cream 5 Liter</a>
+        <a href="#">Ice Cream Package</a>
+      </div>
+    </div>
+
+    <a href="#promosi" class="nav-item" style="--color:#6BCB77">Promosi</a>
+    <a href="#news" class="nav-item" style="--color:#4D96FF">News</a>
+    <a href="#blog" class="nav-item" style="--color:#FFD93D">Blog</a>
+
+    <span class="nav-indicator"></span>
+  </div>
+
+  <section>
+    <article>
+      <p style="font-family: Arial, sans-serif;">The top #1 ice cream in the world</p>
+      <p>All your favourite flavor in one place</p>
+    </article>
+  </section>
+
+  <section class="produk" id="produk">
+    <h2>Produk Kami</h2>
+    <div class="produk-grid">
+      <div class="produk-item">
+        <img src="KC5.jpg">
+        <p>Ice Cream Stick</p>
+      </div>
+      <div class="produk-item">
+        <img src="KC4.jpg">
+        <p>Ice Cream Cup</p>
+      </div>
+      <div class="produk-item">
+        <img src="KC3.jpg">
+        <p>Ice Cream Cone</p>
+      </div>
+      <div class="produk-item">
+        <img src="KC6.jpg">
+        <p>Ice Cream 5 Liter</p>
+      </div>
+      <div class="produk-item">
+        <img src="KC1.jpg">
+        <p>Ice Cream Package</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Tiks IF-1 &copy; 2025</p>
+  </footer>
+
+  <script>
+    const indicator = document.querySelector('.nav-indicator');
+    const items = document.querySelectorAll('.nav-item');
+
+    function updateIndicator(el) {
+      indicator.style.width = `${el.offsetWidth}px`;
+      indicator.style.left = `${el.offsetLeft}px`;
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('is-active'));
+        item.classList.add('is-active');
+        updateIndicator(item);
+      });
+
+      if (item.classList.contains('is-active')) {
+        updateIndicator(item);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      const active = document.querySelector('.nav-item.is-active');
+      if (active) updateIndicator(active);
+    });
+  </script>
+
+</body>
+</html>
